@@ -1,10 +1,24 @@
+import { NextPage } from 'next'
+import React from 'react'
 import styled from 'styled-components'
+import Layout from "../components/Layout/Layout"
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
+interface indexProps { }
+
+const ZH = styled.div`
+  border: 1px solid red;
+`
+const DH = styled( ZH )`
+  border: 1px solid green;
 `
 
-export default function Home() {
-  return <Title>APSU</Title>
+const index: NextPage<indexProps> = () => {
+  return (
+    <Layout title="首页" type="index">
+      <ZH>Hello world</ZH>
+      <DH>Hello zhang</DH>
+    </Layout>
+  )
 }
+
+export default index
